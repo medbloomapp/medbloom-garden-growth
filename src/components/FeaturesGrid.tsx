@@ -1,6 +1,9 @@
 import { Bell, BarChart3, Users, BookOpen, Volume2, Calendar, Pill, Sprout } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 export const FeaturesGrid = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const features = [
     {
       icon: Bell,
@@ -45,7 +48,14 @@ export const FeaturesGrid = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-background">
+    <section 
+      id="features"
+      ref={ref}
+      className={cn(
+        "py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-background transition-all duration-700",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      )}
+    >
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 sm:mb-16 lg:mb-xxl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-md px-4">
