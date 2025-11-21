@@ -55,35 +55,35 @@ export const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="py-xxl px-lg bg-background">
+    <section id="pricing" className="py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-xxl">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-md">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-xxl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-md px-4">
             Choose Your Plan
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Start free and upgrade anytime to unlock the full MedBloom experience
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-xl max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-xl max-w-4xl mx-auto">
           {/* Free Plan */}
-          <div className="bg-card rounded-2xl p-xl border border-border shadow-sm">
-            <div className="text-center mb-lg">
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+          <div className="bg-card rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-xl border border-border shadow-sm">
+            <div className="text-center mb-6 sm:mb-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                 {freePlan.name}
               </h3>
-              <div className="mb-md">
-                <span className="text-4xl font-bold text-foreground">{freePlan.price}</span>
-                <span className="text-muted-foreground ml-2">{freePlan.period}</span>
+              <div className="mb-3 sm:mb-md">
+                <span className="text-3xl sm:text-4xl font-bold text-foreground">{freePlan.price}</span>
+                <span className="text-sm sm:text-base text-muted-foreground ml-2">{freePlan.period}</span>
               </div>
             </div>
 
-            <ul className="space-y-md mb-xl">
+            <ul className="space-y-3 sm:space-y-md mb-6 sm:mb-8 lg:mb-xl">
               {freePlan.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-sm">
-                  <Check className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{feature}</span>
+                <li key={index} className="flex items-start gap-2 sm:gap-sm">
+                  <Check className="h-4 w-4 sm:h-5 sm:w-5 text-success flex-shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-muted-foreground">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -98,26 +98,26 @@ export const Pricing = () => {
           </div>
 
           {/* Premium Plan */}
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-xl border-2 border-primary shadow-lg relative">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-lg py-xs rounded-full text-sm font-semibold shadow-md">
+          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-xl border-2 border-primary shadow-lg relative">
+            <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 sm:px-lg py-1 sm:py-xs rounded-full text-xs sm:text-sm font-semibold shadow-md whitespace-nowrap">
               Most Popular
             </div>
 
-            <div className="text-center mb-lg">
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+            <div className="text-center mb-6 sm:mb-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                 {premiumPlan.name}
               </h3>
-              <div className="mb-md">
-                <span className="text-4xl font-bold text-foreground">{premiumPlan.price}</span>
-                <span className="text-muted-foreground ml-2">{premiumPlan.period}</span>
+              <div className="mb-3 sm:mb-md">
+                <span className="text-3xl sm:text-4xl font-bold text-foreground">{premiumPlan.price}</span>
+                <span className="text-sm sm:text-base text-muted-foreground ml-2">{premiumPlan.period}</span>
               </div>
             </div>
 
-            <ul className="space-y-md mb-xl">
+            <ul className="space-y-3 sm:space-y-md mb-6 sm:mb-8 lg:mb-xl">
               {premiumPlan.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-sm">
-                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground font-medium">{feature}</span>
+                <li key={index} className="flex items-start gap-2 sm:gap-sm">
+                  <Check className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm sm:text-base text-foreground font-medium">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -131,14 +131,14 @@ export const Pricing = () => {
               {isLoading ? "Processing..." : "Subscribe to Premium"}
             </Button>
             
-            <p className="text-xs text-center text-muted-foreground mt-md">
+            <p className="text-xs text-center text-muted-foreground mt-3 sm:mt-md">
               Cancel anytime. No commitments.
             </p>
           </div>
         </div>
 
-        <div className="mt-xl text-center">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-8 sm:mt-xl text-center px-4">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             All plans include secure data encryption and HIPAA-compliant storage
           </p>
         </div>
