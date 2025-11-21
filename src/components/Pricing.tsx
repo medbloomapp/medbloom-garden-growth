@@ -2,10 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 export const Pricing = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { ref, isVisible } = useScrollAnimation();
 
   const handleSubscribe = async () => {
     setIsLoading(true);
@@ -55,7 +58,14 @@ export const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-background">
+    <section 
+      id="pricing" 
+      ref={ref}
+      className={cn(
+        "py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-background transition-all duration-700",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      )}
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 sm:mb-16 lg:mb-xxl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-md px-4">

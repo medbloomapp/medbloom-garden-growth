@@ -1,6 +1,9 @@
 import { PlantAvatar } from "./PlantAvatar";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { cn } from "@/lib/utils";
 
 export const PlantGrowth = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const stages = [
     { stage: 0, label: "Seed", description: "Your seed of health has been planted 🌱" },
     { stage: 1, label: "Sprout", description: "First signs of growth appear" },
@@ -12,7 +15,14 @@ export const PlantGrowth = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-gradient-to-br from-primary/5 via-accent/10 to-primary/5">
+    <section 
+      id="plant-growth"
+      ref={ref}
+      className={cn(
+        "py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-gradient-to-br from-primary/5 via-accent/10 to-primary/5 transition-all duration-700",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      )}
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 sm:mb-16 lg:mb-xxl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-md px-4">

@@ -4,11 +4,21 @@ import { PlantAvatar } from "./PlantAvatar";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-accent to-primary py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg">
+    <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-accent to-primary py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg mt-16 sm:mt-20">
       <div className="container mx-auto max-w-7xl">
         <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-xxl items-center">
           {/* Left: Content */}
