@@ -45,31 +45,31 @@ export const FeaturesGrid = () => {
   ];
 
   return (
-    <section className="py-xxl px-lg bg-background">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-background">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-xxl">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-md">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-xxl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-md px-4">
             Everything You Need
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Comprehensive features to support your medication adherence journey
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-lg">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-card rounded-xl p-lg border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5"
+              className="bg-card rounded-lg sm:rounded-xl p-5 sm:p-6 lg:p-lg border border-border shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5"
             >
-              <div className="bg-primary/10 rounded-lg p-sm w-fit mb-md">
-                <feature.icon className="h-6 w-6 text-primary" />
+              <div className="bg-primary/10 rounded-lg p-2 sm:p-sm w-fit mb-3 sm:mb-md">
+                <feature.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </div>
               
-              <h3 className="text-lg font-bold text-foreground mb-xs">
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-xs">
                 {feature.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 {feature.description}
               </p>
             </div>

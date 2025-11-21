@@ -34,28 +34,28 @@ export const FAQ = () => {
   ];
 
   return (
-    <section className="py-xxl px-lg bg-muted/30">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-xxl px-4 sm:px-6 lg:px-lg bg-muted/30">
       <div className="container mx-auto max-w-3xl">
-        <div className="text-center mb-xxl">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-md">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-xxl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-md px-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground px-4">
             Everything you need to know about MedBloom
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-md">
+        <Accordion type="single" collapsible className="space-y-3 sm:space-y-md">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="bg-card rounded-xl border border-border px-lg shadow-sm"
+              className="bg-card rounded-lg sm:rounded-xl border border-border px-4 sm:px-6 lg:px-lg shadow-sm"
             >
-              <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary">
+              <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-foreground hover:text-primary py-4 sm:py-5">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-xs sm:text-sm text-muted-foreground pb-4 sm:pb-5">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
