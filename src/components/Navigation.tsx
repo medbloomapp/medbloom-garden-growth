@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
-import { Sprout } from "lucide-react";
+import { Sprout, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +38,7 @@ export const Navigation = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
       const offset = 80; // Account for sticky nav height
@@ -70,11 +78,11 @@ export const Navigation = () => {
             className="flex items-center gap-2 text-lg sm:text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
             <Sprout className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-            <span className="hidden sm:inline">MedBloom</span>
+            <span className="inline">MedBloom</span>
           </button>
 
-          {/* Navigation Links */}
-          <div className="flex items-center gap-1 sm:gap-2 md:gap-4">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-1 sm:gap-2 md:gap-4">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -89,6 +97,36 @@ export const Navigation = () => {
                 {link.label}
               </button>
             ))}
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-10 w-10">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[240px] sm:w-[300px]">
+                <div className="flex flex-col gap-4 mt-8">
+                  {navLinks.map((link) => (
+                    <button
+                      key={link.id}
+                      onClick={() => scrollToSection(link.id)}
+                      className={cn(
+                        "px-4 py-3 text-left text-sm font-medium rounded-md transition-all duration-200",
+                        activeSection === link.id
+                          ? "text-primary bg-primary/10"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                      )}
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>

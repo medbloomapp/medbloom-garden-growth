@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,53 +11,75 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* MedBloom Brand Colors */
-    --background: 0 0% 99.6%; /* #FEFEFE soft off-white */
-    --foreground: 215 25% 26%; /* #2D3748 dark gray */
+    --background: 0 0% 99.6%;
+    /* #FEFEFE soft off-white */
+    --foreground: 215 25% 26%;
+    /* #2D3748 dark gray */
 
-    --card: 210 20% 97.5%; /* #F8F9FA */
+    --card: 210 20% 97.5%;
+    /* #F8F9FA */
     --card-foreground: 215 25% 26%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 26%;
 
-    --primary: 120 25% 65%; /* #8FBC8F sage green */
+    --primary: 120 25% 65%;
+    /* #8FBC8F sage green */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 68% 80%; /* #F4A6A6 soft rose */
+    --secondary: 0 68% 80%;
+    /* #F4A6A6 soft rose */
     --secondary-foreground: 215 25% 26%;
 
     --muted: 210 20% 97.5%;
-    --muted-foreground: 215 17% 52%; /* #718096 */
+    --muted-foreground: 215 17% 52%;
+    /* #718096 */
 
-    --accent: 120 60% 83%; /* #B8E6B8 light green */
+    --accent: 120 60% 83%;
+    /* #B8E6B8 light green */
     --accent-foreground: 215 25% 26%;
 
-    --success: 142 52% 62%; /* #68D391 */
-    --warning: 45 93% 66%; /* #F6E05E */
-    --error: 0 70% 74%; /* #FC8181 */
+    --success: 142 52% 62%;
+    /* #68D391 */
+    --warning: 45 93% 66%;
+    /* #F6E05E */
+    --error: 0 70% 74%;
+    /* #FC8181 */
 
     --destructive: 0 70% 74%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%; /* #E2E8F0 */
+    --border: 214 32% 91%;
+    /* #E2E8F0 */
     --input: 214 32% 91%;
     --ring: 120 25% 65%;
 
-    --radius: 0.75rem; /* 12px default for friendly feel */
+    --radius: 0.75rem;
+    /* 12px default for friendly feel */
 
     /* Plant & Nature Accent Colors */
-    --pot-brown: 25 76% 31%; /* #8B4513 */
-    --soil-dark: 30 36% 26%; /* #654321 */
-    --earth-gray: 0 0% 29%; /* #4A4A4A */
-    
-    --plant-green: 120 61% 34%; /* #228B22 */
-    --plant-lime: 123 61% 52%; /* #32CD32 */
-    --plant-light: 120 73% 75%; /* #90EE90 */
-    
-    --flower-pink-light: 351 100% 86%; /* #FFB6C1 */
-    --flower-pink: 330 100% 71%; /* #FF69B4 */
-    --flower-pink-deep: 328 100% 54%; /* #FF1493 */
-    --flower-center: 51 100% 50%; /* #FFD700 */
+    --pot-brown: 25 76% 31%;
+    /* #8B4513 */
+    --soil-dark: 30 36% 26%;
+    /* #654321 */
+    --earth-gray: 0 0% 29%;
+    /* #4A4A4A */
+
+    --plant-green: 120 61% 34%;
+    /* #228B22 */
+    --plant-lime: 123 61% 52%;
+    /* #32CD32 */
+    --plant-light: 120 73% 75%;
+    /* #90EE90 */
+
+    --flower-pink-light: 351 100% 86%;
+    /* #FFB6C1 */
+    --flower-pink: 330 100% 71%;
+    /* #FF69B4 */
+    --flower-pink-deep: 328 100% 54%;
+    /* #FF1493 */
+    --flower-center: 51 100% 50%;
+    /* #FFD700 */
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(120 60% 83%) 0%, hsl(120 25% 65%) 100%);
@@ -102,12 +126,17 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 
 @layer utilities {
   .font-sans {
